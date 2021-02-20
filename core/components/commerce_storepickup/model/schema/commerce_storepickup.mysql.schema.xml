@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model package="commerce_storepickup" baseClass="comSimpleObject" platform="mysql" defaultEngine="InnoDB" version="1.1">
+    <object class="StorePickupShippingMethod" extends="comShippingMethod" />
+</model>

@@ -1,0 +1,7 @@
+StorePickup for Commerce
+---------------------------------
+
+
+v1.0.0-pl Released on 2021-02-13
+
+- First release
