@@ -20,7 +20,11 @@ use modmore\Commerce\Admin\Widgets\Form\Tab;
  */
 class StorePickupShippingMethod extends comShippingMethod
 {
-    public function getModelFields()
+    /**
+     * Custom shipping address fields
+     * @return array
+     */
+    public function getModelFields(): array
     {
         $fields = [];
 
@@ -45,12 +49,6 @@ class StorePickupShippingMethod extends comShippingMethod
             'name' => 'properties[lastname]',
             'label' => $this->adapter->lexicon('commerce.address.lastname'),
             'value' => $this->getProperty('lastname'),
-        ]);
-
-        $fields[] = new TextField($this->commerce, [
-            'name' => 'properties[email]',
-            'label' => $this->adapter->lexicon('commerce.address.email'),
-            'value' => $this->getProperty('email'),
         ]);
 
         $fields[] = new TextField($this->commerce, [
@@ -104,18 +102,6 @@ class StorePickupShippingMethod extends comShippingMethod
             ]
         ]);
 
-        $fields[] = new TextField($this->commerce, [
-            'name' => 'properties[phone]',
-            'label' => $this->adapter->lexicon('commerce.address.phone'),
-            'value' => $this->getProperty('phone'),
-        ]);
-
-        $fields[] = new TextField($this->commerce, [
-            'name' => 'properties[mobile]',
-            'label' => $this->adapter->lexicon('commerce.address.mobile'),
-            'value' => $this->getProperty('mobile'),
-        ]);
-
         $fields[] = new TextareaField($this->commerce, [
             'name' => 'properties[notes]',
             'label' => $this->adapter->lexicon('commerce.address.notes'),
@@ -123,5 +109,27 @@ class StorePickupShippingMethod extends comShippingMethod
         ]);
 
         return $fields;
+    }
+
+    /**
+     * Get address fields to update
+     * @return array
+     */
+    public function getAddress(): array
+    {
+        return [
+            'fullname' => $this->getProperty('fullname'),
+            'firstname' => $this->getProperty('firstname'),
+            'lastname' => $this->getProperty('lastname'),
+            'company' => $this->getProperty('company'),
+            'address1' => $this->getProperty('address1'),
+            'address2' => $this->getProperty('address2'),
+            'address3' => $this->getProperty('address3'),
+            'zip' => $this->getProperty('zip'),
+            'city' => $this->getProperty('city'),
+            'state' => $this->getProperty('state'),
+            'country' => $this->getProperty('country'),
+            'notes' => $this->getProperty('notes'),
+        ];
     }
 }
