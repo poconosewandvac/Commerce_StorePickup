@@ -1,6 +1,10 @@
 StorePickup for Commerce
 ---------------------------------
 
+v1.0.1-pl Released on 2021-10-16
+
+- Fix incorrect namespace in composer.json (fixes #1)
+
 
 v1.0.0-pl Released on 2021-03-27
 
